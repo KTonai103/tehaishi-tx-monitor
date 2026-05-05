@@ -962,7 +962,7 @@ function render() {
     var daysIntoPeriod = pod.days - period.dayMin;
     if (daysIntoPeriod < 7) {
       var bdrAlert = biopsyDateRange(period.biopsy, txDateVal, pod.days);
-      var biopsyAlertDateStr = bdrAlert ? fmtDate(bdrAlert[0]) + ' - ' + fmtDate(bdrAlert[1]) : period.biopsy;
+      var biopsyAlertDateStr = bdrAlert ? period.biopsy + ' ' + fmtDate(bdrAlert[0]) + ' - ' + fmtDate(bdrAlert[1]) : period.biopsy;
       biopsyAlertHtml = '<div class="biopsy-alert">&#x1F52C; 今期 生検予定: ' + esc(biopsyAlertDateStr) + (period.biopsyFull ? ' (Full study)' : '') + '</div>';
     }
   }
@@ -973,7 +973,7 @@ function render() {
   var nextBiopsyHtml = '';
   if (period) {
     var bdr = biopsyDateRange(period.biopsy, txDateVal, pod.days);
-    var biopsyDateStr = bdr ? fmtDate(bdr[0]) + ' - ' + fmtDate(bdr[1]) : period.biopsy;
+    var biopsyDateStr = bdr ? period.biopsy + ' ' + fmtDate(bdr[0]) + ' - ' + fmtDate(bdr[1]) : period.biopsy;
     var tagHtml = period.biopsyFull
       ? '<span class="tag-full">Full study</span>'
       : '<span class="tag-biopsy">生検+右心カテ</span>';
@@ -1020,7 +1020,7 @@ function render() {
   }
 
   var bdr3 = biopsyDateRange(period.biopsy, txDateVal, pod.days);
-  var biopsyDateStr3 = bdr3 ? fmtDate(bdr3[0]) + ' - ' + fmtDate(bdr3[1]) : period.biopsy;
+  var biopsyDateStr3 = bdr3 ? period.biopsy + ' ' + fmtDate(bdr3[0]) + ' - ' + fmtDate(bdr3[1]) : period.biopsy;
   var biopsyTargetHtml = period.biopsyFull
     ? esc(biopsyDateStr3) + '<span class="tag-full" style="margin-left:8px;">Full study (生検+右心カテ+CAG+IVUS)</span>'
     : esc(biopsyDateStr3);
