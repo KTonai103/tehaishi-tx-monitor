@@ -938,7 +938,7 @@ function render() {
     }
   }
 
-  var weekStr = pod.weeks + '週' + (pod.weekday > 0 ? pod.weekday + '日' : '0日');
+  var weekStr = pod.weeks + '週' + (pod.weekday > 0 ? pod.weekday + '日' : '');
   var periodLabel = period ? esc(period.label) : '範囲外';
 
   var nextBiopsyHtml = '';
